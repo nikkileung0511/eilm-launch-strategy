@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EILM — Strategy & KPIs</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--navy:#2d3e50;--charcoal:#535353;--cream:#f6f5f2;--cream-mid:#e8e6e1;--stone:#9a9893;--cream:#f6f5f2;--feb:#7a8a9e;--mar:#a89b87;--apr:#535353;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(45,62,80,0.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-brand{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:var(--cream);text-decoration:none;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cream);}
+.section{padding:120px 70px 70px;}
+.section h1{font-family:'Playfair Display',serif;font-size:64px;margin-bottom:20px;}
+.section h1 em{font-style:italic;color:var(--charcoal);}
+.section p{font-size:15px;line-height:1.8;color:var(--stone);margin-bottom:50px;max-width:600px;}
+.funnel{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:80px;}
+.funnel-step{padding:40px 28px;text-align:center;position:relative;background:white;border:1px solid rgba(0,0,0,0.05);}
+.funnel-step:last-child{background:var(--charcoal);color:var(--cream);}
+.funnel-step::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--stone);}
+.funnel-step:last-child::after{display:none;}
+.funnel-num{font-family:'Playfair Display',serif;font-size:52px;opacity:0.2;margin-bottom:6px;}
+.funnel-step:last-child .funnel-num{opacity:0.5;}
+.funnel-title{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:10px;}
+.funnel-desc{font-size:11px;line-height:1.6;color:var(--stone);}
+.funnel-step:last-child .funnel-desc{color:rgba(255,255,255,0.75);}
+.kpi-table{width:100%;border-collapse:collapse;background:white;box-shadow:0 2px 20px rgba(0,0,0,0.04);}
+.kpi-table th{background:var(--charcoal);color:var(--cream);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:16px 20px;text-align:left;font-weight:600;}
+.kpi-table td{padding:22px 20px;font-size:13px;color:var(--stone);border-bottom:1px solid rgba(0,0,0,0.04);}
+.kpi-table tr:nth-child(even) td{background:rgba(0,0,0,0.015);}
+.kpi-month{display:flex;align-items:center;gap:12px;}
+.kpi-dot{width:12px;height:12px;border-radius:50%;}
+.kpi-name{font-weight:600;color:var(--navy);font-size:14px;}
+.kpi-milestone{color:var(--charcoal);font-weight:500;}
+@media(max-width:900px){.section{padding:100px 28px 50px;}.funnel{grid-template-columns:1fr;}.nav{padding:16px 24px;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">EILM.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="audience.html">Audience</a>
+    <a href="strategy.html" class="active">Strategy</a>
+    <a href="moodboard.html">Moodboard</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="inspo.html">Inspo Board</a>
+  </div>
+</nav>
+
+<section class="section">
+  <h1>Pre-Order <em>Funnel</em></h1>
+  <p>Converting followers into buyers through a strategic 5-step journey — from discovery to advocacy.</p>
+  <div class="funnel">
+    <div class="funnel-step"><div class="funnel-num">1</div><div class="funnel-title">Discover</div><div class="funnel-desc">Cryptic posts spark curiosity. They follow to find out more.</div></div>
+    <div class="funnel-step"><div class="funnel-num">2</div><div class="funnel-title">Connect</div><div class="funnel-desc">Brand content makes them see themselves in EILM.</div></div>
+    <div class="funnel-step"><div class="funnel-num">3</div><div class="funnel-title">Waitlist</div><div class="funnel-desc">Product reveals give reason to sign up. FOMO sets in.</div></div>
+    <div class="funnel-step"><div class="funnel-num">4</div><div class="funnel-title">Pre-Order</div><div class="funnel-desc">72-hr exclusive access converts warm leads to buyers.</div></div>
+    <div class="funnel-step"><div class="funnel-num">5</div><div class="funnel-title">Advocate</div><div class="funnel-desc">First customers become community. UGC fuels launch.</div></div>
+  </div>
+
+  <h1 style="margin-top:80px;">Monthly <em>KPIs</em></h1>
+  <p>Measuring success across the 3-month pre-launch timeline.</p>
+  <table class="kpi-table">
+    <thead><tr><th>Month</th><th>Followers</th><th>Waitlist</th><th>Engagement</th><th>Key Milestone</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><div class="kpi-month"><div class="kpi-dot" style="background:#5a6d7e;"></div><span class="kpi-name">February</span></div></td>
+        <td>0 → 500</td><td>Page live</td><td>8–12%</td>
+        <td class="kpi-milestone">First 300 followers. Waitlist live. Brand story pinned.</td>
+      </tr>
+      <tr>
+        <td><div class="kpi-month"><div class="kpi-dot" style="background:#8b8b8b;"></div><span class="kpi-name">March</span></div></td>
+        <td>500 → 2,000</td><td>500–1,000+</td><td>5–8%</td>
+        <td class="kpi-milestone">Product reveals top-performing. Pre-orders live in Wk 3.</td>
+      </tr>
+      <tr>
+        <td><div class="kpi-month"><div class="kpi-dot" style="background:#535353;"></div><span class="kpi-name">April ✦</span></div></td>
+        <td>2,000 → 5,000+</td><td>Restock list</td><td>Max saves</td>
+        <td class="kpi-milestone">Sell out at least 1 colourway on launch day.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
