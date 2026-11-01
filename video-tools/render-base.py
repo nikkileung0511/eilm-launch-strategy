@@ -27,11 +27,18 @@ def run(args):
     subprocess.run(["ffmpeg", "-v", "error", "-y", *args], check=True)
 
 
+def frame_count(path):
+    r = subprocess.run(["ffprobe", "-v", "error", "-count_frames", "-select_streams", "v:0",
+                        "-show_entries", "stream=nb_read_frames", "-of", "csv=p=0", str(path)],
+                       capture_output=True, text=True).stdout.strip()
+    return int(r) if r.isdigit() else -1
+
+
 def push_filter(frames, start_zoom=1.0, end_zoom=1.05):
     # pre-scale 10% larger, then zoompan per frame to the output size
     big = f"scale={int(W * 1.1)}:{int(H * 1.1)}:force_original_aspect_ratio=increase,crop={int(W * 1.1)}:{int(H * 1.1)}"
     z = f"{start_zoom}+({end_zoom}-{start_zoom})*on/{max(frames - 1, 1)}"
-    return (f"{big},zoompan=z='{z}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+    return (f"fps={FPS},{big},zoompan=z='{z}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
             f"s={W}x{H}:fps={FPS},setsar=1")
 
 
@@ -79,10 +86,14 @@ for shot in plan["shots"]:
         if speed != 1.0:
             af = f"atempo={speed}," + af
         p = out / "parts" / f"{sid}_{k}.mp4"
+        parts.append(p)
+        if p.exists() and frame_count(p) == frames:
+            continue  # already rendered correctly
         run(["-ss", f"{s:.3f}", "-t", f"{dur:.3f}", "-i", str(src),
              "-map", "0:v:0", "-map", "0:a:0", "-vf", vf, "-af", af,
              "-frames:v", str(frames), *ENC, str(p)])
-        parts.append(p)
+        if frame_count(p) != frames:
+            raise SystemExit(f"{p.name}: expected {frames} frames, got {frame_count(p)}")
     print(f"shot {sid} {shot['clip']}: {len(segs)} piece(s), {shot_len:.2f}s")
 
 listing = out / "parts.txt"
