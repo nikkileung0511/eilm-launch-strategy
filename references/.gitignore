@@ -1,0 +1,4 @@
+# Downloaded reference videos and metadata stay local; re-download with the command in README.md
+*.mp4
+*.m4a
+*.info.json

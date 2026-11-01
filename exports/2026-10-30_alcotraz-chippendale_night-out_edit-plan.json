@@ -1,0 +1,257 @@
+{
+ "title": "Alcotraz night out",
+ "format": "Voice-led experience walkthrough; voiceover added by Nikki in CapCut",
+ "bpm": 120,
+ "location_tag": "Alcotraz, Chippendale",
+ "output_name": "2026-10-30_alcotraz-chippendale_night-out",
+ "vo_pace_wps": 3.3,
+ "shots": [
+  {
+   "id": 1,
+   "section": "Intro",
+   "clip": "IMG_8154",
+   "in": 0.2,
+   "out": 3.2,
+   "move": "push",
+   "vo": "okay so I spent a night in prison… on purpose. this is Alcotraz, a prison-themed cocktail bar in Sydney.",
+   "text": {
+    "opener": {
+     "kicker": "Sydney (prison ★) bar",
+     "venue": "Alcotraz",
+     "sub": ""
+    }
+   }
+  },
+  {
+   "id": 2,
+   "section": "Intro",
+   "clip": "IMG_8244",
+   "in": 0.4,
+   "out": 3.2,
+   "move": "none"
+  },
+  {
+   "id": 3,
+   "section": "Check-in",
+   "clip": "IMG_8144",
+   "in": 0.2,
+   "out": 1.4,
+   "move": "push",
+   "vo": "you check in like a real inmate: rules on the door, and your bags get checked for contraband.",
+   "text": {
+    "card": [
+     "Check-",
+     "in"
+    ]
+   }
+  },
+  {
+   "id": 4,
+   "section": "Check-in",
+   "clip": "IMG_8145",
+   "in": 1.5,
+   "out": 3.0,
+   "move": "none"
+  },
+  {
+   "id": 5,
+   "section": "Check-in",
+   "clip": "IMG_8147",
+   "in": 0.5,
+   "out": 2.0,
+   "move": "ramp"
+  },
+  {
+   "id": 6,
+   "section": "Check-in",
+   "clip": "IMG_8152",
+   "in": 0.0,
+   "out": 1.3,
+   "move": "none"
+  },
+  {
+   "id": 7,
+   "section": "Lock-up",
+   "clip": "IMG_8155",
+   "in": 0.3,
+   "out": 2.3,
+   "move": "push",
+   "vo": "then you change into an orange jumpsuit with your own inmate number, I was 1482, and get locked in a cell with your crew.",
+   "text": {
+    "card": [
+     "Lock-",
+     "up"
+    ]
+   }
+  },
+  {
+   "id": 8,
+   "section": "Lock-up",
+   "clip": "IMG_8231",
+   "in": 0.5,
+   "out": 2.6,
+   "move": "none"
+  },
+  {
+   "id": 11,
+   "section": "Lock-up",
+   "photo": "IMG_8383",
+   "dur": 3.0,
+   "move": "push"
+  },
+  {
+   "id": 12,
+   "section": "The cast",
+   "clip": "IMG_8177",
+   "in": 9.2,
+   "out": 15.0,
+   "move": "none",
+   "vo": "the guards and the warden are all actors, and the whole night plays out like a show around you."
+  },
+  {
+   "id": 9,
+   "section": "Actor moment",
+   "clip": "IMG_8161",
+   "in": 0.0,
+   "out": 2.6,
+   "speech": true,
+   "move": "punch",
+   "text": {
+    "caption": "now, I am mama warden"
+   }
+  },
+  {
+   "id": 10,
+   "section": "Actor moment",
+   "clip": "IMG_8166",
+   "in": 0.1,
+   "out": 3.4,
+   "speech": true,
+   "move": "none",
+   "text": {
+    "pop": "Yes mama warden!"
+   }
+  },
+  {
+   "id": 13,
+   "section": "Drinks",
+   "clip": "IMG_8170",
+   "in": 0.3,
+   "out": 1.3,
+   "move": "push",
+   "vo": "drinks come in tin cups, served on trays straight to your cell, and four cocktails are included with your sentence.",
+   "text": {
+    "card": [
+     "Contraband ",
+     "cocktails"
+    ]
+   }
+  },
+  {
+   "id": 14,
+   "section": "Drinks",
+   "clip": "IMG_8234",
+   "in": 0.4,
+   "out": 1.4,
+   "move": "none"
+  },
+  {
+   "id": 15,
+   "section": "Drinks",
+   "clip": "IMG_8192",
+   "in": 0.8,
+   "out": 2.1,
+   "move": "push"
+  },
+  {
+   "id": 16,
+   "section": "Drinks",
+   "clip": "IMG_8236",
+   "in": 1.5,
+   "out": 2.8,
+   "move": "none"
+  },
+  {
+   "id": 17,
+   "section": "Drinks",
+   "clip": "IMG_8235",
+   "in": 3.0,
+   "out": 4.0,
+   "move": "none"
+  },
+  {
+   "id": 18,
+   "section": "Drinks",
+   "clip": "IMG_8160",
+   "in": 1.0,
+   "out": 2.2,
+   "move": "none"
+  },
+  {
+   "id": 19,
+   "section": "Parole",
+   "clip": "IMG_8238",
+   "in": 10.4,
+   "out": 13.7,
+   "move": "none",
+   "vo": "later, each cell is called into the warden's office for a parole hearing, and your crimes get read out loud.",
+   "text": {
+    "card": [
+     "Parole ",
+     "hearing"
+    ]
+   }
+  },
+  {
+   "id": 20,
+   "section": "Parole",
+   "clip": "IMG_8239",
+   "in": 3.8,
+   "out": 6.7,
+   "move": "none"
+  },
+  {
+   "id": 21,
+   "section": "Actor moment",
+   "clip": "IMG_8241",
+   "in": 10.6,
+   "out": 16.5,
+   "speech": true,
+   "move": "punch",
+   "text": {
+    "caption": [
+     "you stole a vape",
+     "you don't deserve parole because you're batman"
+    ]
+   }
+  },
+  {
+   "id": 22,
+   "section": "Verdict",
+   "clip": "IMG_8242",
+   "in": 0.0,
+   "out": 2.7,
+   "move": "none",
+   "vo": "and yes, I got parole. it's half bar, half show, and you're part of the cast. great for a birthday or a girls' night."
+  },
+  {
+   "id": 23,
+   "section": "Verdict",
+   "clip": "IMG_8270",
+   "in": 0.6,
+   "out": 4.4,
+   "move": "push",
+   "text": {
+    "pop": "Parole granted!"
+   }
+  },
+  {
+   "id": 24,
+   "section": "Verdict",
+   "clip": "IMG_8174",
+   "in": 7.0,
+   "out": 8.0,
+   "move": "none"
+  }
+ ]
+}
