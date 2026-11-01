@@ -13,12 +13,12 @@
    "in": 0.2,
    "out": 3.2,
    "move": "push",
-   "vo": "okay so I spent a night in prison\u2026 on purpose. this is Alcotraz, a prison-themed cocktail bar in Sydney.",
+   "vo": "okay so I spent a night in prison… on purpose. this is Alcotraz, a prison-themed cocktail bar in Sydney.",
    "text": {
     "opener": {
-     "kicker": "Sydney (prison \u2605) bar",
+     "kicker": "Sydney (prison ★) bar",
      "venue": "Alcotraz",
-     "sub": "four cocktails, one parole hearing"
+     "sub": ""
     }
    }
   },

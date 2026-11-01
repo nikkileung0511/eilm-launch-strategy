@@ -78,7 +78,7 @@ const Opener: React.FC<{ kicker: string; venue: string; sub: string }> = ({ kick
       <div style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: 160, color: C.butter, lineHeight: 1, marginTop: 10, textShadow: "0 0 26px rgba(242,201,76,.6), 0 0 36px rgba(0,0,0,.5)" }}>
         {venue}
       </div>
-      <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 36, color: "rgba(255,244,210,.9)", marginTop: 22 }}>{sub}</div>
+      {sub && <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 36, color: "rgba(255,244,210,.9)", marginTop: 22 }}>{sub}</div>}
     </AbsoluteFill>
   );
 };
