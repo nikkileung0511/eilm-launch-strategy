@@ -1,0 +1,4 @@
+# Raw camera footage and rendered videos stay local (too large for git)
+raw/
+exports/*.mp4
+exports/*.mov
