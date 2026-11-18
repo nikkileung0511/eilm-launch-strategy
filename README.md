@@ -10,7 +10,7 @@ A complete multi-page website documenting the 3-month pre-launch strategy for EI
 - **Moodboard** (`moodboard.html`) — Brand colors, vibe, visual style, typography
 - **Calendar** (`calendar.html`) — Week-by-week content calendar for Feb-Apr launch ✨ NEW
 - **Strategy** (`strategy.html`) — Pre-order funnel + monthly KPIs
-- **Content Ideas** (`content-ideas.html`) — Trend radar, 20 ready-to-shoot Instagram ideas, hook bank, weekly rhythm + trend-scan routine for growing @nikkieee511 ✨ NEW
+- **Content Ideas** (`content-ideas.html`) — Content pillars, trend radar, 20 ready-to-shoot Instagram ideas, hook bank, weekly rhythm + trend-scan routine for growing @nikkieee511 (personal creator account) ✨ NEW
 - **Inspo** (`inspo.html`) — Visual inspiration gallery with lifestyle/product/outfit references
 
 ## 🎨 Brand Colors
