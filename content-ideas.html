@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EILM — Content Ideas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#2d3e50;--charcoal:#535353;--cream:#f6f5f2;--cream-mid:#e8e6e1;--stone:#9a9893;--white:#ffffff;
+  --hot:#b5654f;--rising:#a8862f;--seasonal:#5f7f96;--evergreen:#5f7d63;
+  --hot-bg:#f5e9e5;--rising-bg:#f4eedf;--seasonal-bg:#e7eef3;--evergreen-bg:#e8efe8;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+
+/* NAV — matches the rest of the site */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;gap:24px;background:rgba(45,62,80,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-brand{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:var(--cream);text-decoration:none;flex-shrink:0;}
+.nav-links{display:flex;gap:28px;}
+.nav-links a{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);text-decoration:none;transition:color 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--cream);}
+
+/* HERO */
+.hero{background:var(--navy);color:var(--cream);padding:150px 70px 80px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;right:-120px;top:-60px;width:460px;height:460px;border:1px solid rgba(246,245,242,0.08);border-radius:50%;}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--stone);margin-bottom:18px;}
+.hero h1{font-family:'Playfair Display',serif;font-size:68px;font-weight:400;line-height:1.05;margin-bottom:22px;}
+.hero h1 em{font-style:italic;color:#c9c4b9;}
+.hero p.lede{font-size:16px;line-height:1.8;color:rgba(246,245,242,0.72);max-width:640px;}
+.hero-stats{display:flex;gap:56px;margin-top:48px;flex-wrap:wrap;}
+.stat-num{font-family:'Playfair Display',serif;font-size:44px;line-height:1;}
+.stat-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);margin-top:8px;}
+.handle{display:inline-block;margin-top:34px;padding:10px 18px;border:1px solid rgba(246,245,242,0.25);font-size:12px;letter-spacing:2px;color:var(--cream);text-decoration:none;transition:background 0.2s;}
+.handle:hover{background:rgba(246,245,242,0.08);}
+
+/* SECTIONS */
+.section{max-width:1160px;margin:0 auto;padding:90px 70px 0;}
+.section:last-of-type{padding-bottom:100px;}
+.label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--stone);margin-bottom:10px;}
+.section h2{font-family:'Playfair Display',serif;font-size:46px;font-weight:400;line-height:1.1;margin-bottom:14px;}
+.section h2 em{font-style:italic;color:var(--charcoal);}
+.section .intro{font-size:15px;line-height:1.8;color:var(--charcoal);max-width:680px;margin-bottom:40px;}
+
+/* CHIPS */
+.chip{display:inline-block;align-self:flex-start;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;font-weight:600;border-radius:2px;}
+.chip.hot{background:var(--hot-bg);color:var(--hot);}
+.chip.rising{background:var(--rising-bg);color:var(--rising);}
+.chip.seasonal{background:var(--seasonal-bg);color:var(--seasonal);}
+.chip.evergreen{background:var(--evergreen-bg);color:var(--evergreen);}
+
+/* TREND RADAR */
+.radar{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.trend{background:var(--white);border:1px solid rgba(0,0,0,0.06);padding:26px 24px;display:flex;flex-direction:column;gap:12px;}
+.trend h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;line-height:1.25;}
+.trend p{font-size:13px;line-height:1.7;color:var(--charcoal);}
+.trend .angle{font-size:12.5px;line-height:1.6;color:var(--navy);border-top:1px solid var(--cream-mid);padding-top:12px;margin-top:auto;}
+.trend .angle b{font-weight:600;letter-spacing:1.5px;font-size:9px;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:4px;}
+
+/* RULES */
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--cream-mid);border:1px solid var(--cream-mid);}
+.rule{background:var(--navy);color:var(--cream);padding:30px 24px;}
+.rule-n{font-family:'Playfair Display',serif;font-size:44px;opacity:0.3;line-height:1;margin-bottom:10px;}
+.rule h3{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+.rule p{font-size:13px;line-height:1.7;color:rgba(246,245,242,0.72);}
+
+/* IDEA BANK */
+.toolbar{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:flex-start;margin-bottom:28px;}
+.filter-group{display:flex;flex-direction:column;gap:10px;}
+.filter-group .fl{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);}
+.filters{display:flex;flex-wrap:wrap;gap:8px;}
+.filters button{font-family:inherit;font-size:11px;letter-spacing:1px;padding:8px 14px;border:1px solid rgba(45,62,80,0.2);background:transparent;color:var(--navy);cursor:pointer;transition:all 0.15s;}
+.filters button:hover{border-color:var(--navy);}
+.filters button.on{background:var(--navy);color:var(--cream);border-color:var(--navy);}
+.count{font-size:12px;color:var(--stone);margin-bottom:18px;}
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.idea{background:var(--white);border:1px solid rgba(0,0,0,0.06);padding:28px 26px;display:flex;flex-direction:column;gap:14px;transition:opacity 0.2s;}
+.idea.done{opacity:0.5;}
+.idea-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.idea-num{font-family:'Playfair Display',serif;font-size:30px;opacity:0.25;line-height:1;}
+.idea-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;}
+.tag{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 8px;border:1px solid rgba(45,62,80,0.15);color:var(--charcoal);border-radius:2px;}
+.tag.goal{background:var(--navy);color:var(--cream);border-color:var(--navy);}
+.idea h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;line-height:1.25;}
+.hook{background:var(--cream);border-left:3px solid var(--navy);padding:12px 14px;font-size:14px;line-height:1.55;font-style:italic;font-family:'Playfair Display',serif;}
+.hook small{display:block;font-family:'DM Sans',sans-serif;font-style:normal;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);margin-bottom:4px;}
+.idea dl{display:grid;grid-template-columns:86px 1fr;gap:8px 14px;font-size:13px;line-height:1.6;}
+.idea dt{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--stone);padding-top:3px;}
+.idea dd{color:var(--charcoal);}
+.idea-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--cream-mid);padding-top:14px;margin-top:auto;font-size:11px;color:var(--stone);gap:12px;}
+.idea-foot label{display:flex;align-items:center;gap:8px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;font-size:10px;color:var(--navy);}
+.idea-foot input{accent-color:var(--navy);width:15px;height:15px;}
+
+/* HOOK BANK */
+.hooks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(45,62,80,0.15);}
+.hooks li{list-style:none;padding:18px 4px;border-bottom:1px solid rgba(45,62,80,0.15);font-family:'Playfair Display',serif;font-size:18px;line-height:1.45;display:flex;gap:16px;}
+.hooks li:nth-child(odd){padding-right:28px;}
+.hooks li span{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:2px;color:var(--stone);padding-top:6px;min-width:22px;}
+
+/* RHYTHM */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;}
+.day{background:var(--white);border:1px solid rgba(0,0,0,0.06);padding:18px 14px;min-height:160px;}
+.day h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);margin-bottom:12px;font-weight:500;}
+.slot{font-size:12px;line-height:1.5;margin-bottom:10px;color:var(--charcoal);}
+.slot b{display:block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:600;}
+.day.rest{background:transparent;border-style:dashed;}
+
+/* ROUTINE */
+.routine{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.step{border-top:2px solid var(--navy);padding-top:18px;}
+.step .t{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);margin-bottom:8px;}
+.step h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:400;margin-bottom:10px;}
+.step p,.step li{font-size:13px;line-height:1.7;color:var(--charcoal);}
+.step ul{padding-left:18px;}
+
+/* SOURCES */
+.sources{font-size:12px;line-height:1.9;color:var(--stone);columns:2;column-gap:40px;}
+.sources a{color:var(--charcoal);}
+.note{font-size:12px;line-height:1.7;color:var(--stone);margin-top:24px;max-width:760px;}
+
+footer{background:var(--navy);color:var(--stone);text-align:center;padding:36px 20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+
+@media(max-width:1100px){
+  .radar{grid-template-columns:repeat(2,1fr);}
+  .rules{grid-template-columns:repeat(2,1fr);}
+  .week{grid-template-columns:repeat(4,1fr);}
+}
+@media(max-width:900px){
+  .nav{padding:16px 16px;}
+  .nav-links{overflow-x:auto;gap:20px;scrollbar-width:none;}
+  .nav-links::-webkit-scrollbar{display:none;}
+  .hero{padding:120px 16px 56px;}
+  .hero h1{font-size:44px;}
+  .hero-stats{gap:32px;}
+  .section{padding:64px 16px 0;}
+  .section h2{font-size:34px;}
+  .radar,.rules,.ideas,.hooks,.routine{grid-template-columns:1fr;}
+  .hooks li:nth-child(odd){padding-right:4px;}
+  .week{grid-template-columns:repeat(2,1fr);}
+  .sources{columns:1;}
+  .idea dl{grid-template-columns:1fr;gap:2px;}
+  .idea dd{margin-bottom:8px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">EILM.</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="audience.html">Audience</a>
+    <a href="strategy.html">Strategy</a>
+    <a href="moodboard.html">Moodboard</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="content-ideas.html" class="active">Content Ideas</a>
+    <a href="inspo.html">Inspo Board</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Instagram growth · Trend scan · November 2026</p>
+    <h1>Content <em>Ideas</em><br>that earn the follow.</h1>
+    <p class="lede">What's trending across Instagram and TikTok right now, put through the EILM lens: tall girl, activewear, founder-built. Every idea is written for one job: getting people who don't follow you yet to see a Reel, send it to a friend and tap follow.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">9</div><div class="stat-label">Trends to ride</div></div>
+      <div><div class="stat-num">20</div><div class="stat-label">Ready-to-shoot ideas</div></div>
+      <div><div class="stat-num">16</div><div class="stat-label">Scroll-stopping hooks</div></div>
+    </div>
+    <a class="handle" href="https://www.instagram.com/nikkieee511/" target="_blank" rel="noopener">@nikkieee511 ↗</a>
+  </div>
+</header>
+
+<!-- TREND RADAR -->
+<section class="section" id="trends">
+  <p class="label">01 · Trend radar</p>
+  <h2>What's moving <em>right now</em></h2>
+  <p class="intro">Scanned mid-November 2026. Trends burn out in two to four weeks, so <b>Hot</b> ones need to go up this week. <b>Seasonal</b> ones have a hard deadline. <b>Evergreen</b> ones work any time and should become recurring series.</p>
+
+  <div class="radar">
+    <article class="trend">
+      <span class="chip hot">Hot · post by Dec 1</span>
+      <h3>"It's time" Christmas reveal</h3>
+      <p>"All I Want for Christmas Is You" is the No.1 Reels sound (5.8M+ Reels). The format: a dramatic before/after "switch" into holiday mode the second November hits.</p>
+      <div class="angle"><b>EILM angle</b>Switch from the old leggings that stop at your shin to full-length EILM, timed to the beat drop.</div>
+    </article>
+    <article class="trend">
+      <span class="chip hot">Hot</span>
+      <h3>Fixed-camera outfit transitions</h3>
+      <p>Phone stays on a tripod, outfit changes on every beat. It's cheap to make, people watch it more than once, and it's made for showing how something fits.</p>
+      <div class="angle"><b>EILM angle</b>The ideal format for proving the inseam: same pose, same frame, ankle bone always in shot.</div>
+    </article>
+    <article class="trend">
+      <span class="chip hot">Hot</span>
+      <h3>"Be Your Own Housewife"</h3>
+      <p>Riffs on Tate McRae's "Housewife": showing the unglamorous work behind a "dream life". Tate McRae and ADÉLA's "Nicole Kidman" are both top audio this week.</p>
+      <div class="angle"><b>EILM angle</b>"Be your own CEO": 5am order packing, sample fittings, the pilates class in between.</div>
+    </article>
+    <article class="trend">
+      <span class="chip rising">Rising</span>
+      <h3>Timestamp Reels</h3>
+      <p>One visit or one day told through on-screen timestamps, start to finish. It feels like a vlog, keeps people watching, and invites a "wait, what happened at 3:40?"</p>
+      <div class="angle"><b>EILM angle</b>"I went to my first factory sample fitting." Show every timestamp from 9:02 to 4:15.</div>
+    </article>
+    <article class="trend">
+      <span class="chip rising">Rising · Word of the Year</span>
+      <h3>"-maxxing" everything</h3>
+      <p>Dictionary.com's 2026 Word of the Year. Proteinmaxxing, sleepmaxxing, gymmaxxing: taking one habit to the extreme, said half-ironically.</p>
+      <div class="angle"><b>EILM angle</b>Own a term: <i>lengthmaxxing</i>. It's funny, easy to remember and only makes sense from your account.</div>
+    </article>
+    <article class="trend">
+      <span class="chip seasonal">Seasonal · flip it</span>
+      <h3>Winter Arc → <i>Summer Arc</i></h3>
+      <p>#winterarc has 400K+ posts on Instagram and around 600K on TikTok. People spend the colder months building habits before New Year.</p>
+      <div class="angle"><b>EILM angle</b>Your audience is in Australia, where it's summer. A southern-hemisphere "Summer Arc" series stands out against everyone else's winter version.</div>
+    </article>
+    <article class="trend">
+      <span class="chip seasonal">Seasonal · Dec</span>
+      <h3>Activewear as party wear</h3>
+      <p>Q4 fashion signal: satin track pants styled for evening, matching sets in one colour and layering pieces like shrugs. Activewear is now about personal style, not just performance.</p>
+      <div class="angle"><b>EILM angle</b>"Gym to Christmas party" in one set: swap only the shoes, jewellery and jacket.</div>
+    </article>
+    <article class="trend">
+      <span class="chip evergreen">Evergreen · algorithm</span>
+      <h3>Raw beats polished</h3>
+      <p>Reels engagement is up roughly 25% year on year, and phone-shot, unpolished clips are beating studio content. Talking to camera in good daylight is enough.</p>
+      <div class="angle"><b>EILM angle</b>Founder face on camera. You are the brand's best model and its most relatable one.</div>
+    </article>
+    <article class="trend">
+      <span class="chip evergreen">Evergreen · community</span>
+      <h3>Run clubs &amp; IRL fitness</h3>
+      <p>Run clubs, group fitness and personal gym style keep rising. It's community content that people tag their friends in.</p>
+      <div class="angle"><b>EILM angle</b>Start a monthly "Tall Girls Walk / Run Club". Each meet-up gives you a collab Reel and a batch of content from attendees.</div>
+    </article>
+  </div>
+</section>
+
+<!-- ALGORITHM RULES -->
+<section class="section" id="rules">
+  <p class="label">02 · How follows happen in 2026</p>
+  <h2>Four rules for <em>reach</em></h2>
+  <p class="intro">Instagram says watch time, likes per reach and <b>sends</b> (shares by DM) are what push a Reel to people who don't follow you. Write every idea so it gets sent.</p>
+  <div class="rules">
+    <div class="rule"><div class="rule-n">1</div><h3>Design for the send</h3><p>Ask yourself: "Who would she send this to?" Tall-girl problems, "this is so you" and gift ideas all give her a reason to forward it.</p></div>
+    <div class="rule"><div class="rule-n">2</div><h3>Win the first 2 seconds</h3><p>Put the hook as text on screen in frame one, and start mid-action. Don't open with a logo or intro. Loop the ending back into the start.</p></div>
+    <div class="rule"><div class="rule-n">3</div><h3>Test with Trial Reels</h3><p>Trial Reels show only to non-followers. Post two hooks on the same video, keep the one with better watch time and sends, then share it to your grid.</p></div>
+    <div class="rule"><div class="rule-n">4</div><h3>Reels find, carousels keep</h3><p>Reels bring in new people. Carousels (now with music and a caption per slide) get saved, and that's what turns a visitor into a follower.</p></div>
+  </div>
+</section>
+
+<!-- IDEA BANK -->
+<section class="section" id="idea-bank">
+  <p class="label">03 · Idea bank</p>
+  <h2>20 ideas, <em>ready to shoot</em></h2>
+  <p class="intro">Filter by what you need this week. Tick an idea off once it's posted; your ticks are saved in this browser.</p>
+
+  <div class="toolbar">
+    <div class="filter-group">
+      <span class="fl">Goal</span>
+      <div class="filters" id="f-goal">
+        <button class="on" data-v="all">All</button>
+        <button data-v="Reach">Reach</button>
+        <button data-v="Sends">Sends</button>
+        <button data-v="Follows">Follows</button>
+        <button data-v="Saves">Saves</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="fl">Format</span>
+      <div class="filters" id="f-format">
+        <button class="on" data-v="all">All</button>
+        <button data-v="Reel">Reel</button>
+        <button data-v="Carousel">Carousel</button>
+        <button data-v="Stories">Stories</button>
+        <button data-v="Collab">Collab</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="fl">Show</span>
+      <div class="filters" id="f-status">
+        <button class="on" data-v="all">All</button>
+        <button data-v="todo">To post</button>
+        <button data-v="done">Posted</button>
+      </div>
+    </div>
+  </div>
+  <p class="count" id="count"></p>
+  <div class="ideas" id="ideas"></div>
+</section>
+
+<!-- HOOK BANK -->
+<section class="section" id="hooks">
+  <p class="label">04 · Hook bank</p>
+  <h2>First-frame <em>text</em></h2>
+  <p class="intro">Put these on screen in the first second. Swap any of them into any idea above. Run two through Trial Reels and keep whichever wins.</p>
+  <ul class="hooks">
+    <li><span>01</span>"If your leggings stop here, this is for you."</li>
+    <li><span>02</span>"I'm 6'0" and I got tired of waiting, so I made my own."</li>
+    <li><span>03</span>"Things tall girls never say: 'these are a bit long.'"</li>
+    <li><span>04</span>"Send this to your tallest friend. She'll get it."</li>
+    <li><span>05</span>"POV: the sales assistant says 'it's meant to be cropped.'"</li>
+    <li><span>06</span>"Day 1 of my Summer Arc. Yes, it's summer here."</li>
+    <li><span>07</span>"Rating every 'long length' legging I own, honestly."</li>
+    <li><span>08</span>"What it actually costs to start an activewear brand."</li>
+    <li><span>09</span>"Tall girl math: 'regular' + 'tall' = still a shin gap."</li>
+    <li><span>10</span>"I'm lengthmaxxing and I'm not sorry."</li>
+    <li><span>11</span>"Don't buy another activewear set until you watch this."</li>
+    <li><span>12</span>"The squat test every legging should have to pass."</li>
+    <li><span>13</span>"Tell me your height and I'll tell you your inseam."</li>
+    <li><span>14</span>"Things I wish someone told me before launching a brand."</li>
+    <li><span>15</span>"Gift idea for the tall girl who has everything (except pants that fit)."</li>
+    <li><span>16</span>"One set. Four places. Zero changes."</li>
+  </ul>
+</section>
+
+<!-- WEEKLY RHYTHM -->
+<section class="section" id="rhythm">
+  <p class="label">05 · Weekly rhythm</p>
+  <h2>A week of <em>posting</em></h2>
+  <p class="intro">Four Reels, two carousels and Stories every day. It's enough volume to grow without burning out. Batch-film on Sunday so the week runs on autopilot.</p>
+  <div class="week">
+    <div class="day"><h4>Mon</h4><div class="slot"><b>Reel</b>Trend of the week (from Radar)</div><div class="slot"><b>Stories</b>Poll: "this or that" set</div></div>
+    <div class="day"><h4>Tue</h4><div class="slot"><b>Trial Reel</b>Hook A/B test</div><div class="slot"><b>Stories</b>BTS + question box</div></div>
+    <div class="day"><h4>Wed</h4><div class="slot"><b>Carousel</b>Sendable / save-worthy</div><div class="slot"><b>Stories</b>Repost a follower</div></div>
+    <div class="day"><h4>Thu</h4><div class="slot"><b>Reel</b>Founder / build-in-public</div><div class="slot"><b>Stories</b>Day-in-life clips</div></div>
+    <div class="day"><h4>Fri</h4><div class="slot"><b>Reel</b>Fit proof / try-on</div><div class="slot"><b>Stories</b>Weekend plans + link</div></div>
+    <div class="day"><h4>Sat</h4><div class="slot"><b>Carousel</b>Community / UGC roundup</div><div class="slot"><b>Stories</b>Light, casual</div></div>
+    <div class="day rest"><h4>Sun</h4><div class="slot"><b>Batch day</b>Film next week's 4 Reels. Do the trend scan below.</div></div>
+  </div>
+</section>
+
+<!-- TREND-SPOTTING ROUTINE -->
+<section class="section" id="routine">
+  <p class="label">06 · Keep watching</p>
+  <h2>The 15-minute <em>trend scan</em></h2>
+  <p class="intro">Trends change weekly, so this page needs topping up. Do this every Sunday before you batch-film, and add anything good to the Radar.</p>
+  <div class="routine">
+    <div class="step">
+      <p class="t">5 min · Instagram</p>
+      <h3>Audio &amp; Reels tab</h3>
+      <ul>
+        <li>In the Reels editor, open audio and look for the ↗ "trending" arrow. Pick sounds with under 50K Reels; that's early enough.</li>
+        <li>Scroll the Reels tab for 3 minutes. Save anything you'd send to a friend into a "Trend Scan" collection.</li>
+        <li>Open the Edits app's Inspiration tab for templates that are rising.</li>
+      </ul>
+    </div>
+    <div class="step">
+      <p class="t">5 min · TikTok</p>
+      <h3>Where trends start</h3>
+      <ul>
+        <li>TikTok is usually 1–3 weeks ahead of Instagram. Search #tallgirl, #activewear and #pilatesoutfit and sort by "this week".</li>
+        <li>Check TikTok Creative Center → Trends → Songs &amp; Hashtags, filtered to Australia.</li>
+        <li>Anything big on TikTok but not yet on Reels is your window.</li>
+      </ul>
+    </div>
+    <div class="step">
+      <p class="t">5 min · Your numbers</p>
+      <h3>What worked for you</h3>
+      <ul>
+        <li>In the Professional dashboard, sort last week's Reels by <b>sends</b>, then by <b>follows</b>.</li>
+        <li>Make a part 2 of the top performer. Drop the format that came last.</li>
+        <li>Read comments for questions. Each one is a Reel idea (reply with a video).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES -->
+<section class="section" id="sources">
+  <p class="label">Sources</p>
+  <h2>Where this <em>came from</em></h2>
+  <div class="sources">
+    <a href="https://later.com/blog/instagram-reels-trends/" target="_blank" rel="noopener">Later — Instagram Reels trends</a><br>
+    <a href="https://www.socialpilot.co/blog/instagram-reels-trends" target="_blank" rel="noopener">SocialPilot — Trending Reels audio</a><br>
+    <a href="https://napoleoncat.com/blog/instagram-reels-trends/" target="_blank" rel="noopener">NapoleonCat — Reels trends, Nov 2026</a><br>
+    <a href="https://newengen.com/insights/instagram-trends/" target="_blank" rel="noopener">NewEngen — Instagram trends, Nov 2026</a><br>
+    <a href="https://creatordb.app/free-tools/trending-instagram-audio/" target="_blank" rel="noopener">CreatorDB — Trending Instagram audio</a><br>
+    <a href="https://newengen.com/insights/social-media-fitness-trends/" target="_blank" rel="noopener">NewEngen — Social media fitness trends</a><br>
+    <a href="https://trendalytics.co/trend-insights/activewear-athleisure-trends-2026-us-retail-trends-forecast" target="_blank" rel="noopener">Trendalytics — Activewear trends 2026</a><br>
+    <a href="https://www.hubfluence.io/blog/tiktok-shop-fitness-activewear-creator-report" target="_blank" rel="noopener">Hubfluence — TikTok fitness creator report</a><br>
+    <a href="https://knowyourmeme.com/editorials/what-is-the-winter-arc-and-why-are-people-acting-like-its-a-double-xp-event-the-tiktok-fitness-trend-explained/" target="_blank" rel="noopener">Know Your Meme — Winter Arc</a><br>
+    <a href="https://later.com/blog/how-instagram-algorithm-works/" target="_blank" rel="noopener">Later — Instagram algorithm 2026</a><br>
+    <a href="https://sproutsocial.com/insights/instagram-algorithm/" target="_blank" rel="noopener">Sprout Social — Instagram algorithm</a><br>
+    <a href="https://www.dataslayer.ai/blog/instagram-algorithm-2025-complete-guide-for-marketers" target="_blank" rel="noopener">Dataslayer — Ranking signals Mosseri confirmed</a><br>
+    <a href="https://metricool.com/instagram-news/" target="_blank" rel="noopener">Metricool — Instagram updates 2026</a><br>
+    <a href="https://www.kolsquare.com/en/blog/instagram-updates-that-matter-for-creators-and-brands" target="_blank" rel="noopener">Kolsquare — Instagram updates for creators</a>
+  </div>
+  <p class="note">Trend counts and audio rankings come from third-party trackers and change daily. Check the audio in the Reels editor before you post. Song choices depend on whether your account is set as a business or creator account: business accounts may only see the commercial sound library.</p>
+</section>
+
+<footer>EILM · Content Ideas · @nikkieee511 · Updated Nov 2026</footer>
+
+<script>
+const IDEAS = [
+  {t:"The shin-gap transition", trend:"Fixed-camera transitions", format:"Reel", goal:"Reach",
+   hook:"If your leggings stop here, this is for you.",
+   shots:"Tripod at hip height, ankles always in frame. 4 outfits from other brands, each stopping mid-shin, on the beat. Final cut: EILM full length, slow turn.",
+   cta:"\"Follow for the tall-girl fit checks no one else is making.\""},
+  {t:"\"It's time.\" — the Christmas switch", trend:"\"All I Want for Christmas\" reveal", format:"Reel", goal:"Reach",
+   hook:"Nov 1, 11:59pm vs 12:00am",
+   shots:"Before: sad cropped leggings, grey hoodie. Beat drop: full EILM set, Christmas lights behind you. Under 8 seconds so it loops.",
+   cta:"Pin a comment: \"Who's your tall friend that needs this for Christmas? Tag her.\""},
+  {t:"Summer Arc: Day 1 of 42", trend:"Winter Arc (flipped)", format:"Reel", goal:"Follows",
+   hook:"Everyone's on their Winter Arc. In Australia it's summer. Day 1.",
+   shots:"A daily 10-sec clip: morning walk, pilates, meal and one habit. Same opening frame each day so people recognise the series. Every 7 days, post a progress recap carousel.",
+   cta:"A series gives people a reason to follow: \"Follow to do the next 41 days with me.\""},
+  {t:"Be your own CEO", trend:"\"Be Your Own Housewife\"", format:"Reel", goal:"Reach",
+   hook:"Romanticising the part of the dream life nobody films.",
+   shots:"5:40am alarm → packing orders on the floor → reformer class → emails at a café → sample fitting → fold laundry. Tate McRae audio, quick cuts.",
+   cta:"\"Building EILM in public. Follow for the unglamorous bits.\""},
+  {t:"Lengthmaxxing", trend:"-maxxing (Word of the Year)", format:"Reel", goal:"Sends",
+   hook:"I'm lengthmaxxing and I'm not sorry.",
+   shots:"Talking-head, deadpan. List: lengthmaxxing, inseammaxxing, \"no-ankle-out\"-maxxing. Cut to EILM in 3 inseams side by side.",
+   cta:"\"Send to someone who's 5'10\" and above.\""},
+  {t:"Sample fitting, timestamped", trend:"Timestamp Reels", format:"Reel", goal:"Follows",
+   hook:"I flew to my first sample fitting. Here's the whole day.",
+   shots:"On-screen timestamps: 9:02 arrival, 10:15 first try-on (it's wrong), 12:30 lunch, 2:40 the fix, 4:15 the yes. Real reactions, no voiceover polish.",
+   cta:"\"Follow to see if it makes it to production.\""},
+  {t:"Things tall girls never say", trend:"Relatable list format", format:"Carousel", goal:"Sends",
+   hook:"Things tall girls never say: 'these are a bit long.'",
+   shots:"8 slides, big serif text on sand, one line per slide (\"Can you reach that for me?\", \"Mid-calf midi\"). Last slide: EILM logo + \"…finally.\" Add a trending song.",
+   cta:"Caption: \"Send this to your tallest friend.\""},
+  {t:"POV: \"It's meant to be cropped\"", trend:"POV skits", format:"Reel", goal:"Sends",
+   hook:"POV: the sales assistant says it's meant to be cropped.",
+   shots:"Two-character skit, you play both. Change outfits to change characters. Your deadpan face is the punchline. 12–15 seconds.",
+   cta:"Pin: \"Tell me the worst thing a shop assistant has said to you 👇\""},
+  {t:"The tall girl gift guide", trend:"Holiday gift guides", format:"Carousel", goal:"Saves",
+   hook:"Gift ideas for the tall girl who has everything (except pants that fit).",
+   shots:"10 slides: EILM set + 9 other tall-friendly picks (long scarves, tall jeans, extra-long yoga mat, a bed that fits). Mix in other brands so it reads as advice, not an ad.",
+   cta:"\"Save for Christmas shopping. Send to whoever's buying your present.\""},
+  {t:"Gym → Christmas party, one set", trend:"Activewear as eveningwear", format:"Reel", goal:"Saves",
+   hook:"One set. Four places. Zero changes.",
+   shots:"Pilates → café → desk → Christmas drinks. Only swap shoes, jewellery, blazer and lip. Label each location on screen.",
+   cta:"\"Save this for party season.\""},
+  {t:"Why I started EILM", trend:"Raw founder talking-head", format:"Reel", goal:"Follows",
+   hook:"I'm 6'0\" and I got tired of waiting, so I made my own.",
+   shots:"One take, daylight, phone propped on a mug. 30–45 sec: the moment you decided, one fact (inseam stat), what's next. Pin it to the top of your grid.",
+   cta:"\"If you've ever felt like an afterthought in a fitting room, follow along.\""},
+  {t:"Height → inseam guide", trend:"Practical guides", format:"Carousel", goal:"Saves",
+   hook:"Tell me your height and I'll tell you your inseam.",
+   shots:"Slide-per-height chart (5'8\" → 6'3\") with inseam and fit tips. Use the per-slide caption feature to add a note for each height.",
+   cta:"\"Save this before your next online order. Comment your height and I'll reply.\""},
+  {t:"Reply-to-comment Reels", trend:"Community Q&A", format:"Reel", goal:"Follows",
+   hook:"(Comment sticker) \"Do you do a 36 inch?\"",
+   shots:"Use Instagram's reply-with-Reel. Answer one real comment per week: try-on, fabric test, sizing. You never run out of ideas and commenters keep coming back.",
+   cta:"\"Ask me anything in the comments. I answer one with a video every week.\""},
+  {t:"The squat test", trend:"Product-in-use demos", format:"Reel", goal:"Reach",
+   hook:"The squat test every legging should have to pass.",
+   shots:"Close-up on fabric in daylight: squat, lunge, bend forward. Stretch the fabric over your hand. Show the waistband doesn't roll. No music, just the sounds.",
+   cta:"\"Follow for honest fit tests, including other brands.\""},
+  {t:"Honest legging ratings", trend:"Rankings / reviews", format:"Reel", goal:"Sends",
+   hook:"Rating every 'long length' legging I own, honestly.",
+   shots:"Line up 5 pairs (don't name competitors on screen if you'd rather not). Score each: length, squat-proof, waistband. Put EILM last, and be honest about its weak spot too.",
+   cta:"\"What should I test next? Follow for part 2.\""},
+  {t:"Tall Girls Walk Club", trend:"Run clubs & IRL community", format:"Collab", goal:"Follows",
+   hook:"I started a walk club where everyone's 5'10\" and above.",
+   shots:"Announce with a Reel, then film the meet-up: arrivals, group photo, coffee after. Post as a Collab with 2–3 attendees so it shows to their followers too.",
+   cta:"\"Next one's [date]. Follow so you don't miss the drop.\""},
+  {t:"Tall creator collab swap", trend:"Collab posts", format:"Collab", goal:"Reach",
+   hook:"We're both 6'1\". We swapped wardrobes for a day.",
+   shots:"Find 3–5 tall creators of 5K–50K followers in AU. Each tries on the other's go-to outfits. Co-post with Instagram Collab so it's on both grids.",
+   cta:"\"Follow us both for more tall-girl swaps.\""},
+  {t:"Building EILM: the real numbers", trend:"Build in public", format:"Carousel", goal:"Saves",
+   hook:"What it actually cost to start an activewear brand.",
+   shots:"Slides: MOQs, sampling rounds, fabric cost, the mistake that cost the most, what you'd do differently. Share as much as you're comfortable with; specifics get saved.",
+   cta:"\"Save if you're thinking of starting something. Follow for month 2.\""},
+  {t:"This or that: colourway vote", trend:"Interactive Stories", format:"Stories", goal:"Follows",
+   hook:"Help me pick the next colourway.",
+   shots:"3-day Story sequence: poll (A vs B) → slider (how much do you want it) → results reveal. Save to a \"Your Picks\" highlight.",
+   cta:"\"Voters get first access. Make sure you're following.\""},
+  {t:"Repost Fridays", trend:"Reposts tab + UGC", format:"Stories", goal:"Follows",
+   hook:"Tall girls of the week ✦",
+   shots:"Ask followers to tag you in their fit checks. Every Friday, reshare 5 to Stories and repost the best one to your profile Reposts tab.",
+   cta:"\"Tag me in your fit for a chance to be featured.\" Being featured is a reason to follow."}
+];
+
+const STORE = 'eilm-content-ideas-posted';
+function loadDone(){ try{ return new Set(JSON.parse(localStorage.getItem(STORE)||'[]')); }catch(e){ return new Set(); } }
+function saveDone(s){ try{ localStorage.setItem(STORE, JSON.stringify([...s])); }catch(e){} }
+let done = loadDone();
+const state = {goal:'all', format:'all', status:'all'};
+
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function render(){
+  const el = document.getElementById('ideas');
+  let shown = 0;
+  el.innerHTML = IDEAS.map((d,i) => {
+    const id = 'idea-'+(i+1);
+    const isDone = done.has(id);
+    if (state.goal!=='all' && d.goal!==state.goal) return '';
+    if (state.format!=='all' && d.format!==state.format) return '';
+    if (state.status==='done' && !isDone) return '';
+    if (state.status==='todo' && isDone) return '';
+    shown++;
+    return `<article class="idea${isDone?' done':''}">
+      <div class="idea-top">
+        <div class="idea-num">${String(i+1).padStart(2,'0')}</div>
+        <div class="idea-tags"><span class="tag goal">${d.goal}</span><span class="tag">${d.format}</span></div>
+      </div>
+      <h3>${esc(d.t)}</h3>
+      <div class="hook"><small>Hook · first frame</small>${esc(d.hook)}</div>
+      <dl>
+        <dt>Rides</dt><dd>${esc(d.trend)}</dd>
+        <dt>Shoot it</dt><dd>${esc(d.shots)}</dd>
+        <dt>Follow CTA</dt><dd>${esc(d.cta)}</dd>
+      </dl>
+      <div class="idea-foot">
+        <span>${d.format==='Reel'?'Test with Trial Reels first':'Post to grid'}</span>
+        <label><input type="checkbox" data-id="${id}" ${isDone?'checked':''}> Posted</label>
+      </div>
+    </article>`;
+  }).join('');
+  document.getElementById('count').textContent = `Showing ${shown} of ${IDEAS.length} ideas · ${done.size} posted`;
+}
+
+function wire(groupId, key){
+  document.getElementById(groupId).addEventListener('click', e => {
+    const b = e.target.closest('button'); if(!b) return;
+    state[key] = b.dataset.v;
+    b.parentElement.querySelectorAll('button').forEach(x => x.classList.toggle('on', x===b));
+    render();
+  });
+}
+wire('f-goal','goal'); wire('f-format','format'); wire('f-status','status');
+
+document.getElementById('ideas').addEventListener('change', e => {
+  const id = e.target.dataset && e.target.dataset.id; if(!id) return;
+  e.target.checked ? done.add(id) : done.delete(id);
+  saveDone(done); render();
+});
+
+render();
+</script>
+</body>
+</html>
